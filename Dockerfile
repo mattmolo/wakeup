@@ -9,4 +9,4 @@ WORKDIR /app
 
 ENV WAKEUP_PORT 4000
 
-CMD gunicorn app:app -b 0.0.0.0:$APP_PORT
+CMD gunicorn app:app -b 0.0.0.0:$WAKEUP_PORT
