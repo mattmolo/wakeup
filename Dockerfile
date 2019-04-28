@@ -7,4 +7,6 @@ RUN pip install -r /requirements.txt
 COPY . /app
 WORKDIR /app
 
-CMD ["gunicorn", "app:app", "-b", "0.0.0.0:4000"]
+ENV WAKEUP_PORT 4000
+
+CMD gunicorn app:app -b 0.0.0.0:$APP_PORT
